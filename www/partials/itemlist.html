@@ -1,0 +1,45 @@
+<ion-header-bar align-title="center" style="background-color: {{headColor}}; height:56px;">
+  <div class="buttons">
+ <button class="button button-light" ng-click="myGoBack()" style="background-color: {{headColor}}; border-color:{{headColor}}; color:#fff; margin-top: 4px;" ><i class="icon ion-android-arrow-back " ></i></button>
+  </div>
+  <h1 class="title" style="margin-top:8px; right: 205px !important;">ADD Task</h1>
+  
+  <div class="buttons">
+  <a href="#/itemlistadd/{{grocery_id}}" nav-transition="none"> <button class="button button-light "  style="background-color: {{headColor}};border-color:{{headColor}}; color:#fff; margin-top: 8px;"><i class="icon ion-plus"></i></button></a>
+  </div>
+</ion-header-bar>
+
+
+<ion-view >
+<div class="shadow "></div>
+<ion-content>
+  <ion-list can-swipe="true">
+  <ion-item ng-repeat="item in items | orderBy:'-priority'" id="test1" > 
+ 
+  <div  ng-class="{strike:item.is_done == 1};" > 
+          <div class="detail-list" ><div>{{item.itemname}}</div></div>
+        <div class="edit-icon">
+          <a nav-transition="none" style="text-decoration: none; color:grey;" href="#/itemlistedit/{{item.itemlist_id}}">
+            <i class="icon ion-edit "></i>
+          </a>
+        </div>
+        <hr>
+           <div class="detail-list" >Due Date &nbsp:&nbsp &nbsp <h3 style="margin-top: 3px; color:#999;font-family: roboto;width: 70%; ">{{item.ddate | date:'short'}}</h3></div>
+           </div>
+         <div class="checkbox-pos" > 
+            <label class="checkbox" >
+  <input type="checkbox" ng-model="item.is_done" ng-true-value="1" ng-false-value="0" ng-checked="item.is_done"  ng-change="change(item.is_done,item.itemlist_id)">
+     </label>
+     
+              </div> 
+
+                     
+ <ion-option-button class="button-assertive icon ion-trash-a" style="background-color:{{headColor}};margin-top: 27px; height: 111px;"ng-click="deletelist(item)"></ion-option-button> 
+
+
+</ion-item>
+  </ion-list>
+
+
+</ion-content>
+</ion-view>

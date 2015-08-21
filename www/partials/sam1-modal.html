@@ -1,0 +1,30 @@
+<ion-header-bar align-title="left" style="background-color: {{$root.cls}};" class="bar-positive barheadcolor">
+  
+  <h1 class="title">Grocery List</h1>
+  <div class="buttons">
+    <button class="button" ng-click="closeModal()"><i class="icon ion-close"></i></button>
+  </div>
+</ion-header-bar>
+
+<ion-view class="modalposition">
+<ion-content>
+<ul class="list">
+    
+	<li class="item">
+    <h6 ng-click="next()">Add</h6>
+	</li>		
+
+    <li class="item">
+      <h6 ng-click="deletegro()" style="color: black;">Delete</h6>
+    </li>
+    <li class="item">
+    	<h6 style="color: black;">Edit</h6>
+    </li>
+
+    <li class="item">
+    	<h6 style="color: black;">{{grocery_id}}</h6>
+    </li>
+    
+</ul>
+</ion-content>
+</ion-view>

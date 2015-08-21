@@ -1,0 +1,61 @@
+<ion-header-bar align-title="left" style="background-color: {{headColor}}; height:56px;" class="bar-light">
+  
+  <h1 class="title" style="margin-top:12px; color:#fff;">Edit Task</h1>
+  <div class="buttons">
+   <button class="button button-light " style="margin-top: 7px; background-color: {{headColor}}; border-color:{{headColor}}" ng-click="goBack()"><i class="icon ion-close" style="background-color: {{headColor}};color: #fff;"></i></button>
+  </div>
+</ion-header-bar>
+
+<ion-view>
+<div class="shadow "></div>
+<ion-content style="background-color:#eeeeee;">
+<div style="margin-right: 3%;margin-left: 3%;">
+<div class="list list-inset addnewitembox" style="box-shadow: 0px 5px 4px rgba(0,0,0,0.3);" >
+  
+   <label class="item item-input inputborder">
+    <input type="text" style="margin-left: -10px;" placeholder="Name" ng-model="items.itemname"/>
+  </label>
+  <!-- 
+  <label class="item item-input inputborder">
+    <input type="text" placeholder="quantity" ng-model="items.amount"/>
+  </label>
+   -->
+  <label class="item item-input inputborder">
+     <textarea placeholder="Note" style="margin-left: -10px;" ng-model="items.note" rows="4"></textarea>
+  </label>
+  
+  <label class="item item-input inputborder" style="height:47px;">
+      <span style="margin-left: -12px;">Due Date</span>
+      <input type="datetime-local" id="ddate" style="margin-top: 0px; margin-left: 20px;">  
+   <!--  <button class="button button-block button-positive"
+          ng-click="pick('date')" id="ddate" >pick date</button>
+      </div> -->
+  </label>
+  
+  <label class="item item-input inputborder">
+    <span class="input-label" style="margin-left: -12px;">Reminder Date</span>
+    <input type="datetime-local" id="rdate" style="margin-top: 0px; margin-left: -5px">
+  </label>
+
+     <button class="button  button-dark  barheadcolor" ng-click="takePicture()" style="width: 160px; min-height:27px; height: 42px;">
+     <h5 style="color:#fff;">Edit Image</h5> 
+  </button>
+ 
+    <img ng-show="imgURI===undefined" ng-src="{{items.status}}"  style="margin-top:10px;width:100%;">
+   <img ng-show="imgURI!==undefined" ng-src="{{imgURI}}"  style="margin-top:10px;width:100%;">
+<br>
+<br>
+<hr>
+<button class="button button-full button-positive" style="margin-top:25px; background-color:{{headColor}}; border-color:{{headColor}}" ng-click="edititem()">
+   <h5 style="color:#fff;">EDIT</h5>
+</button>
+
+</div>  
+      </div>
+ 
+
+
+
+
+</ion-content>
+</ion-view>
